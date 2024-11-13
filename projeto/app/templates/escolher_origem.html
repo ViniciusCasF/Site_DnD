@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Origem</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <body style="background-color: black;">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+                {% load static %}
+                <div class="navbar-content">
+                    <img src="{% static 'cavaleiro.png' %}" alt="Cavaleiro" class="img-cavaleiro">
+                    <span class="navbar-brand mb-0 h1">DEIDAS</span>
+                    <!-- Botão sobre a imagem e o texto -->
+                    <button class="btn-cover" onclick="window.location.href='/'"></button>
+                </div>
+            </div>
+        </nav>
+    </body>
+
+    <div class="container-escolhas">
+        {% load static %}
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Anão</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Audazes e resistentes, os anões são
+                    conhecidos como hábeis guerreiros,
+                    mineradores e trabalhadores em pedra e
+                    metal. Embora tenham menos de 1,50 metro
+                    de altura, os anões são tão largos e
+                    compactos que podem pesar tanto quanto
+                    um humano 60 centímetros mais alto.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Anão">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Anão da Colina</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Como um anão da colina, você tem sentidos aguçados,
+                    maior intuição e notável resiliência.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Anão da Colina">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Anão da Montanha</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Como um anão da montanha, você é forte e resistente,
+                    acostumados a uma vida difícil em terrenos difíceis. Você,
+                    provavelmente tem a descendência daqueles mais altos
+                    (para um anão) e tende a possuir uma coloração mais
+                    clara.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Anão da Montanha">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Elfo</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Elfos são um povo mágico de graça sobrenatural, vivendo
+                    no mundo sem pertencer inteiramente à ele. Eles vivem
+                    em lugares de beleza etérea, no meio de antigas florestas
+                    ou em torres prateadas brilhando com luz feérica, onde
+                    uma música suave ecoa através do ar e fragrâncias
+                    suaves flutuam na brisa.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Elfo">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Elfo da Floresta</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Como um elfo da floresta, você possui sentidos e intuição
+                    aguçados, seus pés ágeis guiam-no rápida e furtivamente
+                    através de suas florestas nativas.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Elfo da Floresta">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Alto Elfo</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Como alto elfo, você possui uma mente afiada e um
+                    domínio da magia básico.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Alto Elfo">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Elfo Negro (Drow)</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Descendentes de uma antiga sub-raça de elfos de pele
+                    negra, os drow foram banidos da superfície do mundo por
+                    seguirem a deusa Lolth pelo caminho do mal e corrupção.
+                    Agora, eles construíram sua própria civilização nas
+                    profundezas do Subterrâneo.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Elfo Negro (Drow)">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Halfling</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Os confortos de um lar são os objetivos da maioria dos
+                    halflings: um lugar para viver em paz e sossego, longe de
+                    monstros saqueadores e embates de exércitos, com um
+                    fogo aceso e uma refeição generosa, e também uma bebida
+                    fina e boa conversa.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Halfling">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Pés Leves</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Como um halfling pés-leves, você pode esconder-se
+                    facilmente, mesmo usando apenas outras pessoas como
+                    cobertura. Você geralmente é afável e se dá muito bem
+                    com os outros.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Pés Leves">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Robusto</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Um halfling robustos é mais resistente do que a média de
+                    sua raça e possui certa resistência aos venenos. Alguns
+                    dizem que os robustos têm sangue dos anões.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Robusto">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Humano</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Os humanos são a
+                    mais jovem das raças comuns, chegando mais tarde no
+                    cenário mundial e com uma vida curta, se comparados aos
+                    anões, elfos e dragões. Talvez seja por causa de suas vidas
+                    mais curtas que eles se esforcem para alcançar o máximo
+                    que podem nos anos que têm.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Humano">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Draconato</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Descendentes de dragões, como seus nomes
+                    demonstram, os draconatos andam orgulhosamente pelo
+                    mundo que os saúda com um temor incompreensível.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Draconato">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Gnomo</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>A energia e entusiasmo dos gnomos pela vida brilha em
+                    cada pedacinho do seu pequeno corpo. Um gnomo padrão
+                    tem aproximadamente 90 centímetros de altura e pesa
+                    entre 20 e 23 kg.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Gnomo">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Gnomo da Floresta</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Como um gnomo da floresta, você possui um traquejo
+                    natural com ilusões e velocidade e furtividade naturais.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Gnomo da Floresta">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Gnomo das Rochas</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Como um gnomo das rochas, você possui uma
+                    inventividade e resistência naturais acima dos outros
+                    gnomos.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Gnomo das Rochas">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Meio Elfo</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Vagando entre dois mundos mas, na verdade, não
+                    pertencendo a nenhum dos dois, meio-elfos combinam o
+                    que alguns dizem ser as melhores qualidades dos seus
+                    parentes elfos e humanos.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Meio Elfo">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Meio Orc</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Quer estejam unidos sob a liderança de um poderoso
+                    bruxo ou estejam lutando por um impasse após anos de
+                    conflito, tribos orcs e humanas as vezes formam alianças,
+                    unindo forças em uma vasta horda para o pavor das
+                    terras civilizadas próximas.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Meio Orc">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_classes">
+            <div class="titulo_classes">
+                <h1>Thiefling</h1>
+            </div>
+            <div class="texto_classes">
+                <h5>Ser recebido com olhares e cochichos, sofrer violência e
+                    insultos nas ruas, ver a desconfiança e medo em cada
+                    olhar: esse é o fardo do tiefling. E para completar tudo, os
+                    tieflings sabem que isso é graças ao pacto feito gerações
+                    atrás que infundiu a essência de Asmodeus.</h5>
+            </div>
+            <form action="{% url 'escolher_origem' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Thiefling">Selecionar</button>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

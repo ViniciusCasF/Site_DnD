@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Cadastro</title>
+</head>
+<body style="background-color: black;">
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+            {% load static %}
+            <div class="navbar-content">
+                <img src="{% static 'cavaleiro.png' %}" alt="Cavaleiro" class="img-cavaleiro">
+                <span class="navbar-brand mb-0 h1">DEIDAS</span>
+                <!-- Botão sobre a imagem e o texto -->
+                <button class="btn-cover" onclick="window.location.href='/'"></button>
+
+                <button class="botao-Entrar" onclick="window.location.href='/entrar'">Entrar</button>
+                <button class="botao-Cadastrar" onclick="window.location.href='/cadastrar'">Cadastrar</button>
+            </div>
+        </div>
+    </nav>
+    <form action="{% url 'listagem_usuarios' %}" method="post">
+        
+    </form>
+</body>
+</html>
+
+<!-- python manage.py runserver 0.0.0.0:8000 -->
+<!-- http://26.47.145.41:8000 -->
+<!-- python manage.py runserver 0.0.0.0:8000 -->
+<!-- 172.29.221.71:8000-->

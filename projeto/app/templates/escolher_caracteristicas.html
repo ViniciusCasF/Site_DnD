@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <style>
+        h6 {
+            color: #ba2929;
+            font-size: 1.5rem; /* Responsivo com rem */
+            margin-top: 2rem; /* Margem superior responsiva */
+            padding-top: 0rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <body style="background-color: black;">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+                {% load static %}
+                <div class="navbar-content">
+                    <img src="{% static 'cavaleiro.png' %}" alt="Cavaleiro" class="img-cavaleiro">
+                    <span class="navbar-brand mb-0 h1">DEIDAS</span>
+                    <!-- Botão sobre a imagem e o texto -->
+                    <button class="btn-cover" onclick="window.location.href='/'"></button>
+                </div>
+            </div>
+        </nav>
+    </body>
+    <body>
+       
+        <form action="{% url 'escolher_caracteristicas' personagem_id=personagem.id_personagem %}" method="post">
+            {% csrf_token %}
+            
+            <h6>Descrição:</h6>
+            <div class="div_nome">
+                <textarea class="area_nome" name="texto_nome" rows="1" cols="50" placeholder="Digite o nome completo do seu personagem"></textarea>
+            </div>
+        
+            <h6>Nome:</h6>
+            <div class="div_nome">
+                <textarea class="area_nome" name="texto_descricao" rows="8" cols="50" placeholder="Digite a descrição do seu personagem"></textarea>
+            </div>
+        
+            <!-- Um único botão de submit -->
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <button class="botao_salvar_C" style="width: 31%;" type="submit">Salvar</button>
+            </div>
+        </form>
+
+        
+    </body>
+</body>
+</html>

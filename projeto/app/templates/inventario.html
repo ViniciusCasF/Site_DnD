@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Habilidades</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+            {% load static %}
+            <div class="navbar-content">
+                <img src="{% static 'cavaleiro.png' %}" alt="Cavaleiro" class="img-cavaleiro">
+                <span class="navbar-brand mb-0 h1">DEIDAS</span>
+                <!-- Botão sobre a imagem e o texto -->
+                <button class="btn-cover" onclick="window.location.href='/'"></button>
+            </div>
+        </div>
+    </nav>
+    
+<!-- Parecido com a pagina das magias, agora vai ser com os itens, mas ao invez de mostrar duas abas partindo
+a pagina ao meio, agora vai ser uma unica que representa o inventário do jogador, e vai existir um botão para
+adicionar um novo item ao inventário, e nele vai ter os itens padrões do jogo, mas também itens personalizados
+(Lembrando de nunca passar do limite de carga, e caso isso aconteça, altere de forma dinamica os atributos na
+ficha do jogador). -->
+
+</body>
+</html>

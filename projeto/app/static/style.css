@@ -1,0 +1,315 @@
+        /* Define a altura fixa para a navbar */
+        .navbar {
+            height: 60px; /* Defina a altura desejada */
+            display: flex;
+            align-items: center; /* Alinha o conteúdo verticalmente no centro */
+            background-color: #363636 !important;
+            position: relative; /* Para permitir o posicionamento absoluto do botão */
+        }
+
+        /* Ajuste a imagem para que ela não aumente a altura da navbar */
+        .img-cavaleiro {
+            width: 50px;
+            position: relative;
+            top: -5px;
+            height: auto;
+            max-height: 100%; /* Ajusta a imagem para caber dentro da altura da navbar */
+            object-fit: contain; /* Mantém a proporção da imagem */
+            margin-right: 20px; /* Ajuste o espaçamento à direita da imagem se necessário */
+        }
+
+        /* Contêiner para a imagem e o texto */
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+            position: relative;
+        }
+
+        .navbar-brand {
+            color: #ba2929 !important;
+            position: relative;
+            top: -3px;
+            left: -15px;
+            font-family: 'Impact', sans-serif;
+            font-size: 25px;
+            margin-right: auto; /* Empurra os botões para a direita */
+        }
+
+        /* Botão que cobre a imagem e o texto */
+        .btn-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 125px; /* Largura total aproximada da imagem e texto */
+            height: 45px; /* Altura da navbar */
+            background: transparent; /* Torna o botão transparente */
+            border: none; /* Remove a borda do botão */
+            cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+            z-index: 2; /* Garante que o botão fique sobre outros elementos */
+        }
+
+        .botao-Entrar {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            width: 100px;
+            height: 30px;
+            border: solid #ba2929 !important;
+            background-color: #363636 !important;
+            color: #ba2929;
+            border-radius: 15px;
+            right: 140px; /* Alinha o botão da direita */
+            top: 7px; /* Ajuste conforme necessário */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .botao-Entrar:hover {
+            transform: scale(1.05);
+        }
+
+        .botao-Cadastrar {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            width: 104px;
+            height: 34px;
+            border: solid #363636 !important;
+            background-color: #ba2929 !important;
+            color: #363636;
+            border-radius: 15px;
+            right: 20px; /* Alinha o botão da direita, próximo ao botão "Entrar" */
+            top: 6px; /* Ajuste conforme necessário */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .botao-Cadastrar:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* Container para as escolhas de classe */
+        .container-escolhas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px; 
+            padding: 40px;
+        }
+
+        /* Cada item da escolha de classe */
+        .escolha_antecedentes, 
+        .escolha_classes {
+
+            border: solid #363636 !important;
+            background-color: #363636; /* Adicione uma cor de fundo para destacar os itens */
+            padding: 20px;
+            border-radius: 10px; /* Adicione bordas arredondadas se desejar */
+            text-align: center; /* Centraliza o texto dentro do item */
+            display: flex; /* Adiciona layout flexível */
+            flex-direction: column; /* Alinha os itens na coluna */
+            justify-content: space-between; /* Espaça os itens, empurrando o botão para o fundo */
+            height: 450px;
+    
+        }
+
+        .titulo_antecedentes,
+        .titulo_classes {
+            font-family: 'Impact', sans-serif;
+            color: #ba2929;
+            font-size: 25px;
+            border-bottom: 1px solid #ba2929;
+        }
+
+        .texto_antecedentes,
+        .texto_classes {
+            color: white;
+            font-size: 10px;
+            position: relative;
+            top: 5px;
+        }
+
+        .botao_vida,
+        .botao_classes,
+        .btn-escolha {
+            background-color: #ba2929;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            border: solid #ba2929 !important;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-escolha:hover,
+        .botao_classes:hover{
+            background-color: #8b2323;
+            border: solid #8b2323 !important;
+        }
+
+        /* Centraliza o container da barra de progresso */
+        /* Centraliza o container da barra de progresso */
+        .progress-container {
+            width: 70%;
+            margin: 20px auto; /* Centraliza a barra de progresso horizontalmente */
+            position: relative;
+            text-align: center; /* Centraliza o texto dentro do container */
+            bottom: 20px;
+        }
+        
+        .progress-wrapper {
+            position: relative;
+            height: 30px; /* Define a altura da barra de progresso */
+            background-color: #333; /* Cor de fundo da barra */
+            border-radius: 5px; /* Arredonda os cantos da barra */
+            overflow: hidden; /* Esconde qualquer parte da barra que saia do container */
+        }
+        
+        .progress-bar {
+            background-color: #ba2929; /* Cor da barra de progresso */
+            height: 100%;
+            width: 0%; /* Inicia a barra vazia */
+            transition: width 0.3s ease; /* Transição suave ao mudar a largura */
+        }
+        
+        .progress-text {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Centraliza o texto horizontalmente */
+            line-height: 30px; /* Alinha verticalmente o texto com a barra */
+            color: white;
+            font-weight: bold;
+            z-index: 1; /* Garante que o texto fique sobre a barra */
+        }
+        
+        .texto_vida,
+        .texto_habilidades{
+            font-family: Impact, sans-serif;
+            color: #ba2929;
+            text-align: center;
+            position: relative;
+            font-size: 30px;
+            
+            top: 0px;
+        }
+        .Titulo_pericias,
+        .titulo_habilidades{
+            font-family: Impact, sans-serif;
+            color: #922121;
+            text-align: center;
+            position: relative;
+            font-size: 50px;
+        }
+
+        .botao_aumentar{
+            position: absolute;
+            background-image: url('seta_dir.png'); /* Verifique se o caminho está correto */
+            background-size: cover;
+            background-position: center; /* Centraliza a imagem */
+            width: 25px; /* Defina a largura do botão */
+            height: 25px; /* Defina a altura do botão */
+            border: none; /* Remova a borda padrão */
+            cursor: pointer; /* Adicione um cursor de pointer */
+            background-color: transparent;
+            right: 5px;
+            top: 10%;
+        }
+
+        .botao_diminuir{
+            position: absolute;
+            background-image: url('seta.png'); /* Verifique se o caminho está correto */
+            background-size: cover;
+            background-position: center; /* Centraliza a imagem */
+            width: 25px; /* Defina a largura do botão */
+            height: 25px; /* Defina a altura do botão */
+            border: none; /* Remova a borda padrão */
+            cursor: pointer; /* Adicione um cursor de pointer */
+            left: 5px;
+            top: 10%;
+            background-color: transparent;
+        }
+        .botao_salvar_C,
+        .botao_salvar_P,
+        .botao_salvar{
+            margin-top: 20px;
+            width: 70%;
+            height: 30px;
+            text-align: center;
+            border: #ba2929;
+            border-radius: 5px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            background-color:#ba2929 ;
+        }
+
+        .divisao_vida {
+            display: flex;
+            justify-content: space-between; /* Espaça as divs igualmente */
+            margin-top: 10%;
+        }
+        
+        .espaço_vida_dado,
+        .espaço_vida_metade {
+            display: flex;
+            flex-direction: column; /* Alinha os itens na coluna */
+            justify-content: space-between;
+            width: 45%; /* Ajuste a largura conforme necessário */
+            height: 400px;
+            background-color: #363636;
+            border-radius: 10px;
+            padding: 20px; /* Adicione espaçamento interno */
+            box-sizing: border-box; /* Inclui o padding na largura e altura */
+        }
+        
+        .botao_vida {
+            margin-top: auto; /* Joga o botão para baixo, após o texto */
+            align-self: center; /* Centraliza o botão horizontalmente */
+        }
+
+        .container-escolhas1 {
+            padding: 20px;
+        }
+        
+        .grid-list1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 200px é o tamanho mínimo de cada coluna */
+            gap: 20px; /* Espaçamento entre os itens */
+            list-style: none; /* Remove bullets da lista */
+            padding: 0;
+            margin: 0;
+        }
+        
+        .escolha-item1 {
+            border: solid #363636;
+            background-color: #363636;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: border 0.3s;
+        }
+        .escolha-item1.selecionado {
+            border: 3px solid #ba2929; /* Destaca o quadrado quando selecionado */
+        }
+        
+        .div_nome {
+            position: relative;
+            padding-top: 5%;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .area_nome{
+            position: relative;
+            background-color: #363636;
+            border-radius: 5px;
+            color: white;
+            left: 3px;
+        }

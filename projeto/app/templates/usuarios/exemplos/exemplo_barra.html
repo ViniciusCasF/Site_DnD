@@ -1,0 +1,99 @@
+<!-- points_progress_bars.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Barras de Progresso com Pontos</title>
+    <style>
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #4caf50;
+            text-align: center;
+            color: white;
+        }
+        .button-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Barras de Progresso com Pontos</h1>
+    
+    <form method="post" action="{% url 'salvar_progresso' %}">
+        {% csrf_token %}
+        
+        <div id="pointsInfo">
+            Pontos disponíveis: <span id="pointsRemaining">{{ total_points }}</span>
+        </div>
+        
+        <!-- Barra de Progresso 1 -->
+        <div class="progress-container">
+            <div id="progressBar1" class="progress-bar">{{ initial_value_1 }}</div>
+        </div>
+        <input type="hidden" id="progressValue1" name="progress_value_1" value="{{ initial_value_1 }}">
+        <div class="button-container">
+            <button type="button" onclick="updateProgress('progressBar1', 'progressValue1', 1)">Aumentar 1</button>
+            <button type="button" onclick="updateProgress('progressBar1', 'progressValue1', -1)">Diminuir 1</button>
+        </div>
+        
+        <!-- Barra de Progresso 2 -->
+        <div class="progress-container">
+            <div id="progressBar2" class="progress-bar">{{ initial_value_2 }}</div>
+        </div>
+        <input type="hidden" id="progressValue2" name="progress_value_2" value="{{ initial_value_2 }}">
+        <div class="button-container">
+            <button type="button" onclick="updateProgress('progressBar2', 'progressValue2', 1)">Aumentar 1</button>
+            <button type="button" onclick="updateProgress('progressBar2', 'progressValue2', -1)">Diminuir 1</button>
+        </div>
+        
+        <!-- Adicione mais barras conforme necessário -->
+        
+        <button type="submit">Salvar</button>
+    </form>
+    
+    <script>
+        // Custo de cada valor de barra de progresso
+        const costs = {
+            8: 0,
+            9: 1,
+            10: 2,
+            11: 3,
+            12: 4,
+            13: 5,
+            14: 7,
+            15: 9
+        };
+        
+        let totalPoints = parseInt(document.getElementById('pointsRemaining').innerText);
+
+        function updateProgress(progressBarId, progressValueId, change) {
+            const progressBar = document.getElementById(progressBarId);
+            const progressValue = document.getElementById(progressValueId);
+            const currentValue = parseInt(progressBar.innerText);
+            let newValue = currentValue + change;
+            
+            if (newValue >= 8 && newValue <= 15) {
+                const currentCost = costs[currentValue];
+                const newCost = costs[newValue];
+                
+                // Verifica se há pontos suficientes
+                if (totalPoints + currentCost - newCost >= 0) {
+                    // Atualiza a largura da barra
+                    progressBar.innerText = newValue;
+                    progressBar.style.width = ((newValue - 8) / (15 - 8) * 100) + '%';
+                    progressValue.value = newValue;
+                    
+                    // Atualiza a contagem de pontos disponíveis
+                    totalPoints += currentCost - newCost;
+                    document.getElementById('pointsRemaining').innerText = totalPoints;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Antecedentes</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <body style="background-color: black;">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+                {% load static %}
+                <div class="navbar-content">
+                    <img src="{% static 'cavaleiro.png' %}" alt="Cavaleiro" class="img-cavaleiro">
+                    <span class="navbar-brand mb-0 h1">DEIDAS</span>
+                    <!-- Botão sobre a imagem e o texto -->
+                    <button class="btn-cover" onclick="window.location.href='/'"></button>
+                </div>
+            </div>
+        </nav>
+    </body>
+
+    <div class="container-escolhas">
+        {% load static %}
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Acólito</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Intuição e Religião</h5>
+                    <h5>Idiomas: Dois a sua escolha.</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Acólito">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Artesão de Guilda</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Intuição e Persuasão</h5>
+                <h5>Idiomas: Um a sua escolha.</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Artesão de Guilda">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Artista</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Acrobacia e Atuação</h5>
+                <h5>Proficiências com Ferramentas: Kit de disfarce e um instrumento musical a sua escolha</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Artista">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Charlatão</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Enganação e Prestidigitação</h5>
+                <h5>Proficiências com Ferramentas: Kit de disfarce e Kit de falsificação</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Charlatão">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Criança de rua</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Furtividade e Prestidigitação</h5>
+                <h5>Proficiências com Ferramentas: Kit de disfarce e Ferramentas de ladrão</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Criança de rua">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Criminoso</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Enganação e Furtividade</h5>
+                <h5>Proficiências com Ferramentas: Kit de jogos e Ferramentas de ladrão</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Criminoso">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Eremita</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Medicina e Religião</h5>
+                <h5>Idiomas: Um a sua escolha</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Eremita">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Forasteiro</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Atletismo e Sobrevivência</h5>
+                <h5>Proficiência com ferramentas: Um tipo de instrumento musical</h5>
+                <h5>Idiomas: Um a sua escolha</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Forasteiro">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Heroi do povo</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Lidar com animais e Sobrevivência</h5>
+                <h5>Proficiência com ferramentas: Um tipo de ferramenta de artesão, veículo (terrestre)</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Heroi do povo">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Marinheiro</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Atletismo e Percepção</h5>
+                <h5>Proficiência com ferramentas: Ferramentas de navegador, veículo (maritmo)</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Marinheiro">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Nobre</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: História e Persuasão</h5>
+                <h5>Proficiência com ferramentas: Um kit de jogos</h5>
+                <h5>Idiomas: Um a sua escolha</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Nobre">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Sábio</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: História e Arcanismo</h5>
+                <h5>Idiomas: Dois a sua escolha</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Sábio">Selecionar</button>
+            </form>
+        </div>
+
+        <div class="escolha_antecedentes">
+            <div class="titulo_antecedentes">
+                <h1>Soldado</h1>
+            </div>
+            <div class="texto_antecedentes">
+                <h5>Pericias: Atletismo e Intimidação</h5>
+                <h5>Idiomas: Um kit de jogos e veículo (terrestre)</h5>
+            </div>
+            <form action="{% url 'escolher_antecedentes' personagem_id=personagem.id_personagem %}" method="POST">
+                {% csrf_token %}
+                <button class="botao_classes" type="submit" name="bot_escolha" value="Soldado">Selecionar</button>
+            </form>
+        </div>
+    </div>
+</body>
