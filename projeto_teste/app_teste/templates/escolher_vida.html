@@ -24,12 +24,6 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById('vida-value').innerText = data.personagem_vida;
-
-                // Reabilita os botões após um curto período de tempo (opcional)
-                //setTimeout(() => {
-                //    document.getElementById('metade-btn').disabled = false;
-                //    document.getElementById('girar-btn').disabled = false;
-                //}, 1000); // 1 segundo
             });
         }
 
@@ -37,7 +31,6 @@
             // Exibe uma mensagem ou alerta antes de enviar a requisição
             alert('Ação salva. Você será redirecionado.');
 
-            // Envia uma requisição POST ao backend
             fetch("{% url 'calcular_vida' personagem.id_personagem %}", {
                 method: 'POST',
                 headers: {
@@ -48,7 +41,6 @@
             })
             .then(response => {
                 if (response.redirected) {
-                    // Se houver um redirecionamento, o navegador será redirecionado automaticamente
                     window.location.href = response.url;
                 } else {
                     // Caso contrário, você pode exibir uma mensagem ou realizar outras ações
@@ -73,7 +65,6 @@
     
     <div class="container mt-5">
         <h1 class="titulo_habilidades">Escolha uma das duas formas de calcular a sua vida:</h1>
-        <!--<h1 class="text-white">Personagem: {{ constituicao }}</h1> -->
         <h2 class="texto_habilidades">Vida maxima: <span id="vida-value">{{ personagem.vida_atual }}</span></h2>
         <div class="divisao_vida">
             <div class="espaço_vida_dado">

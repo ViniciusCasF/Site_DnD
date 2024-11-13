@@ -37,12 +37,12 @@
         <form action="{% url 'escolher_caracteristicas' personagem_id=personagem.id_personagem %}" method="post">
             {% csrf_token %}
             
-            <h6>Descrição:</h6>
+            <h6>Nome:</h6>
             <div class="div_nome">
                 <textarea class="area_nome" name="texto_nome" rows="1" cols="50" placeholder="Digite o nome completo do seu personagem"></textarea>
             </div>
         
-            <h6>Nome:</h6>
+            <h6>Descrição:</h6>
             <div class="div_nome">
                 <textarea class="area_nome" name="texto_descricao" rows="8" cols="50" placeholder="Digite a descrição do seu personagem"></textarea>
             </div>
